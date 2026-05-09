@@ -1,128 +1,235 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Sports Quiz</title>
-    <link rel="stylesheet" href="style.css">
+
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background: linear-gradient(to right, #1e3c72, #2a5298);
+            color: white;
+            margin: 0;
+            padding: 20px;
+        }
+
+        .container {
+            max-width: 700px;
+            margin: auto;
+            background-color: rgba(255,255,255,0.1);
+            padding: 30px;
+            border-radius: 15px;
+            box-shadow: 0px 0px 15px black;
+        }
+
+        h1 {
+            text-align: center;
+            color: gold;
+        }
+
+        .question {
+            background-color: rgba(255,255,255,0.15);
+            padding: 15px;
+            margin-bottom: 20px;
+            border-radius: 10px;
+        }
+
+        select {
+            width: 100%;
+            padding: 10px;
+            border-radius: 5px;
+            border: none;
+            margin-top: 10px;
+            font-size: 16px;
+        }
+
+        button {
+            width: 100%;
+            padding: 15px;
+            background-color: gold;
+            color: black;
+            border: none;
+            border-radius: 10px;
+            font-size: 18px;
+            font-weight: bold;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background-color: orange;
+        }
+
+        #score {
+            text-align: center;
+            margin-top: 30px;
+            font-size: 32px;
+            color: gold;
+        }
+    </style>
 </head>
 
 <body>
 
-    <div class="container">
+<div class="container">
 
-        <h1>🏆 Sports Matching Quiz 🏆</h1>
-        <p class="subtitle">Match the athlete with the correct team!</p>
+    <h1>🏆 Sports Matching Quiz 🏆</h1>
 
-        <div id="quiz">
-
-            <div class="question">
-                <p>1. Michael Jordan</p>
-                <select id="q1">
-                    <option>Choose</option>
-                    <option>Boston Celtics</option>
-                    <option>Chicago Bulls</option>
-                    <option>Miami Heat</option>
-                </select>
-            </div>
-
-            <div class="question">
-                <p>2. Larry Bird</p>
-                <select id="q2">
-                    <option>Choose</option>
-                    <option>Los Angeles Lakers</option>
-                    <option>Dallas Mavericks</option>
-                    <option>Boston Celtics</option>
-                </select>
-            </div>
-
-            <div class="question">
-                <p>3. Caleb Williams</p>
-                <select id="q3">
-                    <option>Choose</option>
-                    <option>Kansas City Chiefs</option>
-                    <option>Chicago Bears</option>
-                    <option>Green Bay Packers</option>
-                </select>
-            </div>
-
-            <div class="question">
-                <p>4. Derek Jeter</p>
-                <select id="q4">
-                    <option>Choose</option>
-                    <option>New York Mets</option>
-                    <option>Chicago White Sox</option>
-                    <option>New York Yankees</option>
-                </select>
-            </div>
-
-            <div class="question">
-                <p>5. Connor Bedard</p>
-                <select id="q5">
-                    <option>Choose</option>
-                    <option>Detroit Red Wings</option>
-                    <option>Chicago Blackhawks</option>
-                    <option>New Jersey Devils</option>
-                </select>
-            </div>
-
-            <div class="question">
-                <p>6. Kobe Bryant</p>
-                <select id="q6">
-                    <option>Choose</option>
-                    <option>Chicago Bulls</option>
-                    <option>Los Angeles Lakers</option>
-                    <option>Miami Heat</option>
-                </select>
-            </div>
-
-            <div class="question">
-                <p>7. Patrick Mahomes</p>
-                <select id="q7">
-                    <option>Choose</option>
-                    <option>Buffalo Bills</option>
-                    <option>Kansas City Chiefs</option>
-                    <option>New England Patriots</option>
-                </select>
-            </div>
-
-            <div class="question">
-                <p>8. Dansby Swanson</p>
-                <select id="q8">
-                    <option>Choose</option>
-                    <option>Miami Marlins</option>
-                    <option>Detroit Tigers</option>
-                    <option>Chicago Cubs</option>
-                </select>
-            </div>
-
-            <div class="question">
-                <p>9. Caitlin Clark</p>
-                <select id="q9">
-                    <option>Choose</option>
-                    <option>Dallas Wings</option>
-                    <option>Indiana Fever</option>
-                    <option>Chicago Sky</option>
-                </select>
-            </div>
-
-            <div class="question">
-                <p>10. Mallory Swanson</p>
-                <select id="q10">
-                    <option>Choose</option>
-                    <option>Portland Thorns</option>
-                    <option>San Diego Wave</option>
-                    <option>Chicago Stars</option>
-                </select>
-            </div>
-
-            <button onclick="checkAnswers()">Submit Quiz</button>
-
-        </div>
-
-        <h2 id="score"></h2>
-
+    <div class="question">
+        <p>1. Michael Jordan</p>
+        <select id="q1">
+            <option>Choose</option>
+            <option>Boston Celtics</option>
+            <option>Chicago Bulls</option>
+            <option>Miami Heat</option>
+        </select>
     </div>
 
-    <script src="script.js"></script>
+    <div class="question">
+        <p>2. Larry Bird</p>
+        <select id="q2">
+            <option>Choose</option>
+            <option>Los Angeles Lakers</option>
+            <option>Dallas Mavericks</option>
+            <option>Boston Celtics</option>
+        </select>
+    </div>
+
+    <div class="question">
+        <p>3. Caleb Williams</p>
+        <select id="q3">
+            <option>Choose</option>
+            <option>Kansas City Chiefs</option>
+            <option>Chicago Bears</option>
+            <option>Green Bay Packers</option>
+        </select>
+    </div>
+
+    <div class="question">
+        <p>4. Derek Jeter</p>
+        <select id="q4">
+            <option>Choose</option>
+            <option>New York Mets</option>
+            <option>Chicago White Sox</option>
+            <option>New York Yankees</option>
+        </select>
+    </div>
+
+    <div class="question">
+        <p>5. Connor Bedard</p>
+        <select id="q5">
+            <option>Choose</option>
+            <option>Detroit Red Wings</option>
+            <option>Chicago Blackhawks</option>
+            <option>New Jersey Devils</option>
+        </select>
+    </div>
+
+    <div class="question">
+        <p>6. Kobe Bryant</p>
+        <select id="q6">
+            <option>Choose</option>
+            <option>Chicago Bulls</option>
+            <option>Los Angeles Lakers</option>
+            <option>Miami Heat</option>
+        </select>
+    </div>
+
+    <div class="question">
+        <p>7. Patrick Mahomes</p>
+        <select id="q7">
+            <option>Choose</option>
+            <option>Buffalo Bills</option>
+            <option>Kansas City Chiefs</option>
+            <option>New England Patriots</option>
+        </select>
+    </div>
+
+    <div class="question">
+        <p>8. Dansby Swanson</p>
+        <select id="q8">
+            <option>Choose</option>
+            <option>Miami Marlins</option>
+            <option>Detroit Tigers</option>
+            <option>Chicago Cubs</option>
+        </select>
+    </div>
+
+    <div class="question">
+        <p>9. Caitlin Clark</p>
+        <select id="q9">
+            <option>Choose</option>
+            <option>Dallas Wings</option>
+            <option>Indiana Fever</option>
+            <option>Chicago Sky</option>
+        </select>
+    </div>
+
+    <div class="question">
+        <p>10. Mallory Swanson</p>
+        <select id="q10">
+            <option>Choose</option>
+            <option>Portland Thorns</option>
+            <option>San Diego Wave</option>
+            <option>Chicago Stars</option>
+        </select>
+    </div>
+
+    <button onclick="checkAnswers()">Submit Quiz</button>
+
+    <h2 id="score"></h2>
+
+</div>
+
+<script>
+function checkAnswers() {
+
+    let score = 0;
+
+    if (document.getElementById("q1").value === "Chicago Bulls") {
+        score++;
+    }
+
+    if (document.getElementById("q2").value === "Boston Celtics") {
+        score++;
+    }
+
+    if (document.getElementById("q3").value === "Chicago Bears") {
+        score++;
+    }
+
+    if (document.getElementById("q4").value === "New York Yankees") {
+        score++;
+    }
+
+    if (document.getElementById("q5").value === "Chicago Blackhawks") {
+        score++;
+    }
+
+    if (document.getElementById("q6").value === "Los Angeles Lakers") {
+        score++;
+    }
+
+    if (document.getElementById("q7").value === "Kansas City Chiefs") {
+        score++;
+    }
+
+    if (document.getElementById("q8").value === "Chicago Cubs") {
+        score++;
+    }
+
+    if (document.getElementById("q9").value === "Indiana Fever") {
+        score++;
+    }
+
+    if (document.getElementById("q10").value === "Chicago Stars") {
+        score++;
+    }
+
+    document.getElementById("score").innerHTML =
+        "🏅 Your score is " + score + " out of 10!";
+}
+</script>
 
 </body>
 </html>
